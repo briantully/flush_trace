@@ -57,9 +57,9 @@ class FlushTraceConfigForm extends ConfigFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $depth = $form_state->getValue('depth');
-    if ($depth > 10) {
+    if ($depth > 50) {
       // Set an error for the form element with a key of "title".
-      $form_state->setErrorByName('depth', $this->t('The depth must be a number equal to or less than 10.'));
+      $form_state->setErrorByName('depth', $this->t('The depth must be a number equal to or less than 50. 10 is the recommended default.'));
     }
   }
 
