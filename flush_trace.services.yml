@@ -1,0 +1,7 @@
+services:
+  flush_trace.twig_environment :
+    class: Drupal\flush_trace\Twig\TwigEnvironmentWrapper
+    public: false
+    decorates: twig
+    decoration_priority: 1
+    arguments: ['@flush_trace.twig_environment.inner']

@@ -1,0 +1,6 @@
+name: 'Flush trace'
+type: module
+description: 'Support module for logging backtrace when cache flush is triggered.'
+package: Development
+version: VERSION
+core: 8.x

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * This file provides log/backtrace functionality when cache_flush is called.
+ */
+
+use Drupal\Core\Utility\Error;
+
+/**
+ * Implements hook_cache_flush().
+ */
+function flush_trace_cache_flush() {
+  $message = 'Cache flush triggered';
+  $backtrace = debug_backtrace();
+  $trace = Error::formatBacktrace($backtrace);
+  $variables = array(
+    '%type' => 'flush_trace',
+    '@message' => $message,
+    '%backtrace_string' => $trace,
+  );
+  // if printing to screen
+  // $msg = t('%type: @message in %backtrace_string', $variables);
+  // drupal_set_message($msg, 'warning', TRUE);
+  // \Drupal::logger('flush_trace')->notice($msg);
+  \Drupal::logger('flush_trace')->debug('%type: @message in %backtrace_string', $variables);
+}
