@@ -1,7 +1,9 @@
 services:
   flush_trace.twig_environment :
-    class: Drupal\flush_trace\Twig\TwigEnvironmentWrapper
+    class: Drupal\flush_trace\Twig\DebugTwigEnvironmentWrapper
     public: false
     decorates: twig
     decoration_priority: 1
-    arguments: ['@flush_trace.twig_environment.inner']
+    arguments: ['@logger.factory', '@app.root', '@cache.default', '%twig_extension_hash%', '@state', '@twig.loader', '%twig.config%']
+    tags:
+      - { name: service_collector, tag: 'twig.extension', call: addExtension }
