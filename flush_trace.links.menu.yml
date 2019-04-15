@@ -1,0 +1,6 @@
+flush_trace.settings:
+  title: 'Flush Trace Configuration'
+  parent: system.logging_settings
+  description: 'Specify backtrace depth for cache flush tracing.'
+  route_name: flush_trace.settings
+  weight: 99

@@ -1,0 +1,4 @@
+flush_trace.settings:
+  title: 'Flush Trace Configuration'
+  route_name: flush_trace.settings
+  base_route: system.logging_settings

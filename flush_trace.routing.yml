@@ -1,0 +1,9 @@
+flush_trace.settings:
+  path: '/admin/config/development/logging/flush_trace'
+  defaults:
+    _form: '\Drupal\flush_trace\Form\FlushTraceConfigForm'
+    _title: 'Flush Trace Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
